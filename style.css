@@ -1,18 +1,15 @@
-/* style.css */
-
 body {
     margin: 0;
     padding: 0;
-    background: url('/images/home.png') no-repeat center center fixed;
-    background-size: cover;
+    height: 200vh;
+    background: url("/images/home.png") no-repeat center top;
+    background-size: contain;
+    background-attachment: scroll;
 }
 
 .carousel-item {
-	height: 65vh;
-	min-height: 350px;
-	background: no-repeat center center scroll;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-  }
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+}
