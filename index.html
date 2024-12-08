@@ -1,131 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Christmas</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
-</head>
-<body>
-    <!-- Start Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Mock</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Happy Christmas</title>
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="home-page">
+            <!-- Start Navigation -->
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="#">Mock</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarResponsive"
+                        aria-controls="navbarResponsive"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navigation -->
+
+            <!-- Start Content -->
+            <div class="container mt-5 pt-4">
+                <div class="row" data-masonry='{"percentPosition": true}'>
+                    <!-- Card 1 -->
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <img src="path-to-your-image.jpg" class="card-img-top" alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">
+                                    This card has supporting text below as a natural lead-in to additional content.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Card 2 -->
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <img src="path-to-your-image.jpg" class="card-img-top" alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">Another Card title</h5>
+                                <p class="card-text">
+                                    This is a slightly different card with a longer description.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Card 3 -->
+                    <div class="col-sm-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <img src="path-to-your-image.jpg" class="card-img-top" alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">Final Card title</h5>
+                                <p class="card-text">
+                                    Here is the last card. It has supporting text below as well.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <!-- End Content -->
         </div>
-    </nav>
-    <!-- End Navigation -->
-
-    <!-- Start Content -->
-    <div class="container mt-5 pt-4">
-        <div class="row" data-masonry='{"percentPosition": true}'>
-            <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
-                <div class="card">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          
-                  <div class="card-body">
-                    <h5 class="card-title">Card title that wraps to a new line</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3317%; top: 0px;">
-                <div class="card p-3">
-                  <figure class="p-3 mb-0">
-                    <blockquote class="blockquote">
-                      <p>A well-known quote, contained in a blockquote element.</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer mb-0 text-muted">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6633%; top: 0px;">
-                <div class="card">
-                  <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-          
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3317%; top: 201px;">
-                <div class="card bg-primary text-white text-center p-3">
-                  <figure class="mb-0">
-                    <blockquote class="blockquote">
-                      <p>A well-known quote, contained in a blockquote element.</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer mb-0 text-white">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3317%; top: 370px;">
-                <div class="card text-center">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6633%; top: 402px;">
-                <div class="card">
-                  <svg class="bd-placeholder-img card-img" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Card image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card image</text></svg>
-          
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 410px;">
-                <div class="card p-3 text-end">
-                  <figure class="mb-0">
-                    <blockquote class="blockquote">
-                      <p>A well-known quote, contained in a blockquote element.</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer mb-0 text-muted">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3317%; top: 548px;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-        </div>
-    </div>
-    <!-- End Content -->
-
-    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
-</body>
+        <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    </body>
 </html>
-
-

@@ -1,15 +1,155 @@
+/* -------------------------------------style------------------------------------------------------ */
 body {
-    margin: 0;
     padding: 0;
-    height: 200vh;
-    background: url("/images/home.png") no-repeat center top;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* -------------------------------------index.html------------------------------------------------------ */
+.home-page {
+    min-height: 200vh;
+    background: url("/images/home.png") no-repeat center top 56px;
     background-size: contain;
     background-attachment: scroll;
 }
 
-.carousel-item {
-    height: 65vh;
-    min-height: 350px;
-    background: no-repeat center center scroll;
+.content {
+    padding-top: 7rem; /* Đảm bảo nội dung nằm dưới navbar */
+    text-align: center;
+}
+/* -------------------------------------home.html------------------------------------------------------ */
+.about-page {
+    background-color: #b23227;
+}
+
+.content {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 100%;
+    background: url("/images/home.png") no-repeat center top;
     background-size: cover;
+    flex-direction: column;
+    gap: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.medium-text {
+    padding-top: 2rem;
+    font-size: 40px;
+    font-weight: bold;
+    font-weight: 600;
+}
+
+.large-text {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.normal-text {
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 36px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 2px solid #b23227;
+    background-color: #b23227;
+    font-weight: 400;
+}
+.card-body {
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    padding-top: 2rem;
+}
+.card-title {
+    font-size: 40px;
+    font-weight: bold;
+    font-weight: 600;
+}
+.container_md {
+    position: relative; 
+    width: 100%;
+}
+
+.container_md_content {
+    position: relative; 
+    color: white; 
+
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto; 
+}
+
+.container_md_content_title {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 30px; 
+    text-align: center; 
+    font-weight: bold; 
+
+}
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.footer_content {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    gap: 170px; /* Tăng khoảng cách giữa ảnh và văn bản */
+    color: #fff;
+}
+
+.footer-img {
+    width: 40%;
+    height: auto;
+}
+
+.footer-text {
+    width: 40%;
+    display: flex;
+    flex-direction: column; /* Các phần tử text sẽ xếp theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung văn bản theo chiều dọc */
+    padding-left: 20px; /* Đẩy văn bản sang phải */
+}
+
+.footer-text div {
+    margin-bottom: 10px; /* Khoảng cách giữa các phần tử văn bản */
+}
+
+.bye-text {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.phone, .email, .restaurant {
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.phone-text, .email-text, .restaurant-text {
+    font-weight: bold;
+    font-size: 28px;
+    
+}
+.bye-text {
+    padding-bottom: 5rem;
+}
+
+
+/*  */
+body{margin:0;height:100%;}
+canvas{
+    position:absolute;top:0;left:0;
+    z-index:100;
+
 }
