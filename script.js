@@ -1,140 +1,58 @@
-var canvas = document.getElementById("canvas"),
-    ctx = canvas.getContext("2d"),
-    things = [],
-    thingsCount = 124,
-    mouse = {
-      x: -100,
-      y: -100
-    },
-    minDist = 150;
+const canvas = document.getElementById('snow-canvas');
+const ctx = canvas.getContext('2d');
 
+// Đặt kích thước canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// object image
-var image = new Image();
-image.src = './images/8.png';
+// Mảng lưu các bông tuyết
+const snowflakes = [];
 
-for (var i = 0; i < thingsCount; i++) {
-  let opacity = Math.random() + 0.4;
-  let thingWidth = (Math.floor(Math.random() * 20) + 20) * (opacity + 0.4);
-  let thingHeight = image.naturalHeight / image.naturalWidth * thingWidth;
-  let speed = Math.random() * 1 + 0.5;
-  things.push({
-    width: thingWidth,
-    height: thingHeight,
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height - thingHeight,
-    speed: speed,
-    vY: speed,
-    vX: 0,
-    d: Math.random() * 1.2 - 0.6, // wind or something like that
-    stepSize: (Math.random()) / 20,
-    step: 0,
-    angle: Math.random() * 180 - 90,
-    rad: Math.random(),
-    opacity: opacity,
-    _ratate: Math.random() // ratate 正負
+// Hàm tạo bông tuyết
+function createSnowflake() {
+  const x = Math.random() * canvas.width;
+  const y = Math.random() * canvas.height;
+  const radius = Math.random() * 7 + 1; // Kích thước bông tuyết (1 - 5px)
+  const speed = Math.random() * 2 + 1; // Tốc độ rơi
+  return { x, y, radius, speed };
+}
+
+// Thêm bông tuyết vào mảng
+for (let i = 0; i < 100; i++) {
+  snowflakes.push(createSnowflake());
+}
+
+// Vẽ bông tuyết
+function drawSnowflake(snowflake) {
+  ctx.beginPath();
+  ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+}
+
+// Cập nhật vị trí bông tuyết
+function updateSnowflake(snowflake) {
+  snowflake.y += snowflake.speed;
+  if (snowflake.y > canvas.height) {
+    snowflake.y = -snowflake.radius; // Đặt lại bông tuyết ở phía trên
+    snowflake.x = Math.random() * canvas.width;
+  }
+}
+
+// Hàm tạo hiệu ứng tuyết rơi
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Xóa khung hình trước
+  snowflakes.forEach((snowflake) => {
+    drawSnowflake(snowflake);
+    updateSnowflake(snowflake);
   });
+  requestAnimationFrame(animate); // Lặp lại animation
 }
 
-function drawThings() {
-  things.map((thing) => {
-    ctx.beginPath();
-    thing.rad = (thing.angle * Math.PI) / 180;
-    ctx.save();
-    var cx = thing.x + thing.width / 2;
-    var cy = thing.y + thing.height / 2;
-    ctx.globalAlpha = thing.opacity;
-    ctx.setTransform(
-      Math.cos(thing.rad),
-      Math.sin(thing.rad),
-      -Math.sin(thing.rad),
-      Math.cos(thing.rad),
-      cx - cx * Math.cos(thing.rad) + cy * Math.sin(thing.rad),
-      cy - cx * Math.sin(thing.rad) - cy * Math.cos(thing.rad)
-    );
-    ctx.drawImage(image, thing.x, thing.y, thing.width, thing.height);
-    ctx.restore();
-  });
-}
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  drawThings();
-}
-
-function update() {
-  things.map((thing) => {
-    var dist = Math.sqrt((thing.x - mouse.x) ** 2 + (thing.y - mouse.y) ** 2);
-    
-    if (dist < minDist) {
-      var force = minDist / (dist * dist),
-          xcomp = (mouse.x - thing.x) / dist,
-          ycomp = (mouse.y - thing.y) / dist,
-          deltaV = force * 2; // deplay when hover mouse
-
-      thing.vX -= deltaV * xcomp;
-      thing.vY -= deltaV * ycomp;
-      
-      if (thing.d * xcomp > 0) {
-        thing.d = 0 - thing.d;
-      }
-    } else {
-      thing.vX *= .98;
-
-      if (thing.vY < thing.speed) {
-        thing.vY = thing.speed
-      }
-
-      thing.vX += Math.cos(thing.step += (Math.random() * 0.05)) * thing.stepSize;
-    }
-    
-    thing.y += thing.vY;
-    thing.x += thing.vX + thing.d;
-    
-    var _angle = Math.random() + 0.2;
-    // stuff.angle += _angle;
-    if (thing._ratate == 0) {
-      thing.angle += _angle;
-    } else {
-      thing.angle -= _angle;
-    }
-    
-    if (thing.y > canvas.height) {
-      reset(thing);
-    }
-
-    if (thing.x > canvas.width || thing.x < (0 - thing.width)) {
-      reset(thing);
-    }
-  });
-}
-
-function reset(thing) {
-  thing.opacity = Math.random() + 0.4;
-  thing.width = (Math.floor(Math.random() * 20) + 20) * (thing.opacity + 0.4);
-  thing.height = image.naturalHeight / image.naturalWidth * thing.width;
-  thing.x = Math.floor(Math.random() * canvas.width);
-  thing.y = 0 - thing.height;
-  thing.speed = Math.random() * 1 + 0.5
-  thing.vY = thing.speed;
-  thing.vX = 0;
-  // thing.angle = 0;
-  // thing.size = 0;
-  thing._ratate = Math.random();
-}
-
-canvas.addEventListener('mousemove', function(e){
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+// Đảm bảo canvas thay đổi kích thước khi người dùng thay đổi kích thước cửa sổ
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 
-function tick() {
-  draw();
-  update();
-  requestAnimationFrame(tick);
-}
-
-tick();
+animate();
