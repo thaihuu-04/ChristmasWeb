@@ -44,7 +44,7 @@ document.getElementById("closeButton").addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  var encodedText = 'Design By HuuHuu';
+  var encodedText = 'Design By Thai Huu';
   var footer = document.createElement("a");
   footer.innerHTML = encodedText;
   document.body.appendChild(footer); 
