@@ -1,0 +1,23 @@
+/* Square images for cards */
+.img-square {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+}
+
+/* Card styling */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Center modal content */
+.modal-content {
+    border-radius: 15px;
+}

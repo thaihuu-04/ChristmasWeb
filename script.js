@@ -56,3 +56,22 @@ window.addEventListener('resize', () => {
 });
 
 animate();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLink = document.querySelector('.nav-link[href="#menu"]'); // Link Menu
+  const popupModal = new bootstrap.Modal(document.getElementById('popupModal'));
+  const closePopupBtns = document.querySelectorAll('#closePopupBtn, #closePopupBtnFooter');
+
+  // Mở popup khi click vào menu
+  menuLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      popupModal.show();
+  });
+
+  // Đóng popup
+  closePopupBtns.forEach(btn => {
+      btn.addEventListener("click", function () {
+          popupModal.hide();
+      });
+  });
+});
