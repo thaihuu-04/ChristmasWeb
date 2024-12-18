@@ -1,23 +1,31 @@
-/* Square images for cards */
-.img-square {
-    object-fit: cover;
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
+.image-container {
+    position: relative;
+    display: inline-block;
 }
 
-/* Card styling */
-.card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: transform 0.2s ease-in-out;
+.card-img-top {
+    width: 100%;
+    height: auto;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.overlay {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white;
+    padding: 20px;
+    z-index: 1;
 }
 
-/* Center modal content */
-.modal-content {
-    border-radius: 15px;
+
+.card-body {
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+
+}
+.card-title {
+    font-weight: bold;
+    font-weight: 600;
 }

@@ -226,7 +226,7 @@ body {
     opacity: 0;
   }
 }
-a {
+.footer-link {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -357,4 +357,8 @@ h4 {
 .thiepne {
   width: 100% !important;
   height: 100% !important;
+}
+.navbar {
+  height: 3.5rem;
+  justify-content: center !important;
 }
